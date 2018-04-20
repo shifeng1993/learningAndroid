@@ -1,6 +1,7 @@
 package com.example.shifeng.helloworld;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -21,15 +22,24 @@ public class FirstActivity extends AppCompatActivity {
         button1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                //显示toast
 //                Toast.makeText(FirstActivity.this, "You clicked Button 1", Toast.LENGTH_SHORT).show();
 //                finish();
+
+//                显式传递
                 Intent intent = new Intent(FirstActivity.this, SecondActivity.class);
-//                Intent intent = new Intent("com.example.shifeng.helloworld.ACTION_START");
-//                intent.addCategory("com.example.activitytest.MY_CATEGORY");
 //                String data = "isme";
 //                intent.putExtra("hello",data);
+
+//                隐式传递
+//                Intent intent = new Intent("com.example.shifeng.helloworld.ACTION_START");
+//                intent.addCategory("com.example.activitytest.MY_CATEGORY");
+                startActivityForResult(intent, 1);
+
+////                隐式传递调用其他活动用法
+//                Intent intent = new Intent(Intent.ACTION_VIEW);
+//                intent.setData(Uri.parse("tel:10086"));
 //                startActivity(intent);
-                    startActivityForResult(intent, 1);
             }
         });
 

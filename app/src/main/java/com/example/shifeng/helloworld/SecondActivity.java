@@ -20,11 +20,21 @@ public class SecondActivity extends AppCompatActivity {
         button2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent();
-                intent.putExtra("data_return", "Hello FirstActivity");
-                setResult(RESULT_OK, intent);
-                finish();
+                back("button2");
             }
         });
+    }
+
+    @Override
+    public void onBackPressed() {
+        back("back");
+    }
+
+    protected void back(String msg) {
+        Intent intent = new Intent();
+        intent.putExtra("data_return", "Hello FirstActivity");
+        setResult(RESULT_OK, intent);
+        Log.d("FirstActivity", msg);
+        finish();
     }
 }
