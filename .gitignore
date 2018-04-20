@@ -5,6 +5,7 @@
 /.idea/libraries
 .DS_Store
 .vscode
+.idea
 /build
 /captures
 .externalNativeBuild
