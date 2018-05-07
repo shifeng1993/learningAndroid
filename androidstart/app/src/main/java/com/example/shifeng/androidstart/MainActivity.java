@@ -1,5 +1,6 @@
 package com.example.shifeng.androidstart;
 
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -13,6 +14,10 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        ActionBar actionbar = getSupportActionBar();
+        if (actionbar != null) {
+            actionbar.hide();
+        }
         if (savedInstanceState != null) {
             String tmpData = savedInstanceState.getString("data_key");
             Log.d("printData", tmpData);
@@ -21,7 +26,7 @@ public class MainActivity extends AppCompatActivity {
         button1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(MainActivity.this, "You clicked Button 1", Toast.LENGTH_SHORT).show();
+                Toast.makeText(MainActivity.this, "HELLO IS ME", Toast.LENGTH_SHORT).show();
             }
         });
     }
