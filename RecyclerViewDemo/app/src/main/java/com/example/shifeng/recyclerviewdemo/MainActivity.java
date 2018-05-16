@@ -18,6 +18,7 @@ public class MainActivity extends AppCompatActivity {
         initFruits();                                                                // 初始化水果数据
         RecyclerView recyclerView = (RecyclerView) findViewById(R.id.recycler_view); // 获取RecyclerView实例
         LinearLayoutManager layoutManager = new LinearLayoutManager(this);    // 创建layoutManager对象，
+        layoutManager.setOrientation(LinearLayoutManager.HORIZONTAL);
         recyclerView.setLayoutManager(layoutManager);                                // 指定布局方式
         FruitAdapter adapter = new FruitAdapter(fruitList);                          // list数据传到适配器中
         recyclerView.setAdapter(adapter);                                            // 完成适配器设置
